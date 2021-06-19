@@ -372,7 +372,19 @@ public class SeckillController implements InitializingBean {
 
         return path.equals(oldPath);
     }
-
+    
+     /**
+     * 调试接口，可以动态加载商品信息到redis缓存中
+     *
+     * @return
+     */
+    @RequestMapping(value = "test", method = RequestMethod.GET)
+    @ResponseBody
+    public Result<Boolean> test() {
+        logger.info("商品信息热加载");
+        afterPropertiesSet();
+        return Result.success(true);     
+    }
     /**
      * 服务器程序启动的时候加载商品列表信息
      */
