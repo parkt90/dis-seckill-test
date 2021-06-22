@@ -4,7 +4,7 @@
 
 - [快速启动](#快速启动)
 
-- [TODO](#TODO)
+- [`TODO`](#TODO)
 
 - [压测结果](#压测结果)
 
@@ -13,7 +13,15 @@
 
 ## 介绍
 
-本项目为另一个项目[dis-seckill](https://github.com/Grootzz/dis-seckill)的压力测试版本，重点工作为优化秒杀接口性能，提高单机系统并发瓶颈。
+本项目为另一个项目[`dis-seckill`](https://github.com/parkt90/dis-seckill)的压力测试版本，重点工作为优化秒杀接口性能，提高单机系统并发瓶颈。
+
+完整项目[`dis-seckill`](https://github.com/parkt90/dis-seckill)扩展包括
+
+- **项目基础技术点和流程图介绍**；
+- **接口安全优化**；
+- **系统限流与降级服务**；
+- **`Nginx`水平扩展网关模块与限流配置**；
+- **参考视频资料和项目推荐**；
 
 ## 快速启动
 
@@ -34,16 +42,16 @@
 
 - 压力测试
 
-  jmeter 5.4.1。测试文件路径：dis-seckill-common\stress_test\秒杀测试.jmx
+  jmeter 5.4.1。
 
 在运行秒杀系统之前，需要安装好上述构建工具和开发环境，并开启相应组件后。
 
-**第一步**；执行dis-seckill-common/schema/seckill.sql文件，初始化数据库。
+**第一步**；执行`dis-seckill-common/schema/seckill.sql`文件，初始化数据库。
 
 **第二步**；如果安装了git，则可以采用下面的方式快速启动；
 
 ```properties
-git clone https://github.com/parkt90/dis-seckill.git
+git clone https://github.com/parkt90/dis-seckill-test.git
 mvn clean package
 ```
 启动缓存服务：
@@ -84,7 +92,7 @@ java -jar dis-seckill-gateway/target/dis-seckill-gateway-0.0.1-SNAPSHOT.jar
 
 > 注：启动服务时最好按上面的顺序启动。
 
-如果将项目导入IDE中进行构建，则分别按上面的顺序启动服务即可，如需修改代码，可以用IDE启动项目各模块主程序。
+如果将项目导入`IDE`中进行构建，则分别按上面的顺序启动服务模块主程序即可。
 
 **第三步**；访问项目入口地址
 
@@ -116,7 +124,7 @@ java -jar dis-seckill-gateway/target/dis-seckill-gateway-0.0.1-SNAPSHOT.jar
 
 ## Q&A
 
-- 前端文件资源路径：dis-seckill-gateway\src\main\resources下
+- 前端文件资源路径：`dis-seckill-gateway\src\main\resources`下
 
 - 压测文件：dis-seckill-common\stress_test\秒杀测试.jmx
 
