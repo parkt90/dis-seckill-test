@@ -23,6 +23,7 @@
 - **`Nginx`水平扩展网关模块与限流配置**；
 - **参考视频资料和项目推荐**；
 
+## 地址：https://github.com/parkt90/dis-seckill
 ## 快速启动
 
 - 构建工具
